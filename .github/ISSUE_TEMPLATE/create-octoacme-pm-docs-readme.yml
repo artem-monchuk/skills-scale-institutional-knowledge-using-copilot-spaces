@@ -1,0 +1,46 @@
+name: "Create README for OctoAcme Project Management Docs"
+description: "Request to create a comprehensive README for the OctoAcme Project Management Docs"
+title: "[Process Doc Update]: Create README for OctoAcme Project Management Docs with summary and links"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update?"
+      description: "Select the program management process document you want to add content to. If this is a new process doc, choose '<new document>'."
+      options:
+        - "<new document>"
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      value: "Create a comprehensive README for the OctoAcme Project Management Docs folder that:\n- Introduces the OctoAcme project management processes\n- Provides a brief summary of all PM processes used\n- Contains organized links to all documentation in the `docs/` folder\n- Serves as the central entry point for team members learning about our project management approach"
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      value: "Currently, the project management documentation is scattered across multiple files in the `docs/` folder without a clear entry point. A README would:\n- Help new team members quickly understand the complete picture of OctoAcme's PM processes\n- Provide a navigational hub for all process documentation\n- Establish a single source of truth for PM process overview\n- Improve discoverability and onboarding experience\n- Align with best practices for documentation organization"
+    validations:
+      required: true
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      value: "The README should include:\n\n1. **Overview Section**: Brief introduction to OctoAcme PM approach\n2. **Core Principles**: Customer-first, iterative delivery, clear ownership, data-informed decisions, psychological safety\n3. **Project Lifecycle Summary**: Quick reference to the five main phases (Initiation, Planning, Execution, Release, Close & Retrospective)\n4. **Key Roles**: Quick reference to PM, PdM, Developers, QA/Testing, Stakeholders\n5. **Documentation Links** organized by phase:\n   - Initiation: [OctoAcme Project Initiation Guide](./octoacme-project-initiation.md)\n   - Planning: [OctoAcme Project Planning](./octoacme-project-planning.md)\n   - Execution: [Execution & Tracking](./octoacme-execution-and-tracking.md)\n   - Release: [Release & Deployment Guide](./octoacme-release-and-deployment.md)\n   - Closeout: [Retrospective & Continuous Improvement](./octoacme-retrospective-and-continuous-improvement.md)\n   - Cross-cutting:\n     - [Risk Management & Communication](./octoacme-risks-and-communication.md)\n     - [Roles and Personas](./octoacme-roles-and-personas.md)\n     - [Project Management Overview](./octoacme-project-management-overview.md)\n6. **Quick Start**: How to use these docs (e.g., \"New to OctoAcme? Start here...\")\n7. **Communication Cadence**: Weekly sync, standups, stakeholder updates, escalation paths"
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Check all that apply:"
+      options:
+        - label: "Content aligns with existing process docs"
+        - label: "Update improves clarity or closes a documented gap"
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
